@@ -13,14 +13,14 @@ const MyOrders = () => {
     // const history = useHistory();
     const [pkgOrder, setPkgOrder] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/myorders/${user?.email}`)
+        fetch(`https://chilling-eyeballs-31128.herokuapp.com/myorders/${user?.email}`)
         .then((res) => res.json())
             .then((data) => setPkgOrder(data));
     }, [user?.email]);
     const handleOrderDelete = (id) => {
         const proceed = window.confirm('Are you Sure, Delete Your Data?');
         if(proceed){
-            const url = `http://localhost:5000/orderdelete/${id}`;
+            const url = `https://chilling-eyeballs-31128.herokuapp.com/orderdelete/${id}`;
 
             fetch(url, {
                 method: 'DELETE'

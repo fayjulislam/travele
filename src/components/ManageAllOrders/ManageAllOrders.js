@@ -5,14 +5,14 @@ import Swal from 'sweetalert2';
 const ManageAllOrders = () => {
     const [manageAllOrder, setManageAllOrder] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/manageallorders')
+        fetch('https://chilling-eyeballs-31128.herokuapp.com/manageallorders')
             .then((res) => res.json())
             .then((data) => setManageAllOrder(data));
     });
     const handleDelete = (id) => {
         const proced = window.confirm('Are you Sure, Delete Your Data?');
         if (proced) {
-            const url = `http://localhost:5000/allorderdelete/${id}`
+            const url = `https://chilling-eyeballs-31128.herokuapp.com/allorderdelete/${id}`
 
             fetch(url, {
                 method: 'DELETE'
@@ -30,7 +30,7 @@ const ManageAllOrders = () => {
         }
     }
     const handleUpdate = (id) => {
-        const url = `http://localhost:5000/placeorders/${id}`;
+        const url = `https://chilling-eyeballs-31128.herokuapp.com/placeorders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

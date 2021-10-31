@@ -13,7 +13,7 @@ const AddNewPackage = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/packages', {
+        fetch('https://chilling-eyeballs-31128.herokuapp.com/packages', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

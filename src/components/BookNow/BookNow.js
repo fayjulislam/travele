@@ -14,7 +14,7 @@ const BookNow = () => {
     const {id} = useParams();
     const [orders, setOrders] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/allorder/${id}`)
+        fetch(`https://chilling-eyeballs-31128.herokuapp.com/${id}`)
         .then(res => res.json())
         .then(data => setOrders(data))
     },[id])
@@ -23,7 +23,7 @@ const BookNow = () => {
         data.status = 'pending';
         data.email = user?.email;
         data.order = orders;
-        fetch('http://localhost:5000/placeorder', {
+        fetch('https://chilling-eyeballs-31128.herokuapp.com/placeorder', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
