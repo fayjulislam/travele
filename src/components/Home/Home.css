@@ -1,0 +1,54 @@
+
+.medent-img {
+    border-radius: 10px;
+    height: 430px;
+    transition: transform 1.5s, filter 1.5s ease-in-out;
+    filter: grayscale(0);
+}
+.medent-img:hover {
+  filter: grayscale(100%);
+  transform: scale(1.1);
+}
+.we-medent-text {
+    padding-left: 20px;
+}
+.high-light {
+    display: inline-block;
+    width: 70px;
+    color: #fff;
+    margin: 0;
+    opacity: 1.25;
+    background-color: #4fc9e0;
+}
+.home-counter {
+    background-image: linear-gradient(0deg, rgba(80, 137, 148, .7), rgba(94, 167, 182, 0.7)), url('../../image/appointment/appoinment.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.cards-inner {
+    padding: 50px 0;
+    text-align: center;
+    border-radius: 10px;
+    transition: all .4s;
+}
+.cards-inner span {
+    color: #fff;
+}
+.cards-inner:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .5);
+}
+.cards-inner h5 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.cards-inner p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    margin-bottom: 0;
+}

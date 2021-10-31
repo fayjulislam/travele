@@ -1,0 +1,20 @@
+.logo-image {
+    display: inline-block;
+    width: 55px;
+    height: 52px;
+    background-image: url('');
+    vertical-align: middle;
+}
+.logo-text {
+    display: inline-block;
+    color: #3c3c3c;
+    margin: 0 0 0 15px;
+    font-size: 24px;
+    vertical-align: middle;
+}
+.text-btn {
+    color: #fff;
+}
+.dropdown-menu {
+    left: -90px !important;
+}

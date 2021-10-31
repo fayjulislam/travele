@@ -1,0 +1,8 @@
+.service-card {
+    transition: all .4s;
+}
+.card:hover .service-body {
+    transition: all .4s;
+    color: #fff;
+    background-color: #24bbd7;
+}

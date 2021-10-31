@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "medent",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

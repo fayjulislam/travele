@@ -1,0 +1,16 @@
+.feature {
+    margin-top: -60px;
+}
+.feaature-card{
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    transition: all .4s;
+    background-color: #383838;
+}
+.card:hover{
+    box-shadow: 0 0 11px rgba(33, 33, 33, .5);
+}
+.feaature-card img {
+    width: 50px;
+}

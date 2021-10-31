@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Dr. Ursula Smith",
+        "designation": "Endodontics Specialist",
+        "image": "https://themecrazy.net/html/medison/medison-preview/img/doctors/1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Dr. Ursula Smith",
+        "designation": "Pediatric Dentist",
+        "image": "https://themecrazy.net/html/medison/medison-preview/img/doctors/2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Dr. Bernard Dent",
+        "designation": "Dentist",
+        "image": "https://themecrazy.net/html/medison/medison-preview/img/doctors/3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Dr. Ursula Smith",
+        "designation": "Pediatric Dentistt",
+        "image": "https://themecrazy.net/html/medison/medison-preview/img/doctors/4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Dr. Bernard Dent",
+        "designation": "Dentist",
+        "image": "https://themecrazy.net/html/medison/medison-preview/img/doctors/5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Dr. Ursula Smith",
+        "designation": "Endodontics Specialist",
+        "image": "https://themecrazy.net/html/medison/medison-preview/img/doctors/6.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Dr. Bernard Dent",
+        "designation": "Pediatric Dentistt",
+        "image": "https://themecrazy.net/html/medison/medison-preview/img/doctors/7.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Dr. Ursula Smith",
+        "designation": "Endodontics Specialist",
+        "image": "https://themecrazy.net/html/medison/medison-preview/img/doctors/2.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Dr. Bernard Dent",
+        "designation": "Dentist",
+        "image": "https://themecrazy.net/html/medison/medison-preview/img/doctors/6.jpg"
+    }
+]
