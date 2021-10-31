@@ -2,7 +2,7 @@ import React from 'react';
 import Banner from './Bannar/Banner';
 import Feature from './Feature/Feature';
 import './Home.css';
-import { Button, Row } from 'react-bootstrap';
+import { Button, Row, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Service from './Service/Service';
 import UseServices from '../../Hooks/UseServices';
@@ -12,7 +12,14 @@ import Blogs from '../Blogs/Blogs';
 
 const Home = () => {
     const [services] = UseServices();
-    
+    if (services.length === 0) {
+        return (
+            <div style={{ minHeight: '100vh' }} className="d-flex justify-content-center mt-5">
+                <Spinner animation="grow" variant="danger" />
+            </div>
+        )
+    }
+
     return (
         <div>
             <Banner></Banner>
@@ -35,7 +42,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-        
+
             {/* Homepage Services Area  */}
             <section className="mb-5 mt-5">
                 <div className="container shadow-lg px-2 py-3 p-md-5">

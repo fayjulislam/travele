@@ -1,53 +1,89 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2';
 import './AddNewPackage.css';
 
 const AddNewPackage = () => {
+    useEffect(() => {
+        document.title = 'AddNewPackage : Travele Travel Agency';
+    }, []);
+
+
+
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => {
+        fetch('http://localhost:5000/packages', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+
+            .then(res => {
+                if (res) {
+                    Swal.fire("Wow!",
+                        "Package Added Successfully",
+                        "Success"
+                    )
+                }
+            })
+    };
     return (
         <div className="add-new-package">
             <>
-                <div className="col-md-6 mx-auto p-5">
-                    <div>
-                        <Form className="mb-3">
-                            <Form.Control
+                <div className="col-md-6 mx-auto p-5 shadow-lg mt-5 rounded rounded-5">
+                    <Form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="mb-3">
+
+                            <Form.Control {...register("title")}
                                 id="placeName"
                                 type="text"
                                 placeholder="Enter Place Name"
                             />
-                        </Form>
-                    </div>
-                    <div className="mb-3">
-                        <Form>
-                            <Form.Control
+
+                        </div>
+                        <div className="mb-3">
+
+                            <Form.Control {...register("people")}
                                 id="noOfPeople"
                                 type="number"
                                 placeholder="No. Of People"
                             />
-                        </Form>
-                    </div>
-                    <div className="mb-3">
-                        <Form>
-                            <Form.Control
+
+                        </div>
+                        <div className="mb-3">
+
+                            <Form.Control {...register("price")}
                                 id="packagePrice"
                                 type="number"
                                 placeholder="Package Price"
                             />
-                        </Form>
-                    </div>
-                    <div className="mb-3">
-                        <Form>
-                            <Form.Control
+
+                        </div>
+                        <div className="mb-3">
+
+                            <Form.Control {...register("day")}
+                                id="packagePrice"
+                                type="number"
+                                placeholder="No. Of Days"
+                            />
+
+                        </div>
+                        <div className="mb-3">
+
+                            <Form.Control {...register("photo")}
                                 id="packagePhoto"
                                 type="text"
                                 placeholder="Photo URL"
                             />
-                        </Form>
-                    </div>
-                    <div className="mb-3 text center">
-                        <Form >
-                            <Button variant="danger">Add Package</Button>
-                        </Form>
-                    </div>
+
+                        </div>
+                        <div className="mb-3 text center">
+                            <Button type="submit" variant="danger">Add Package</Button>
+                        </div>
+                    </Form>
                 </div>
             </>
         </div>

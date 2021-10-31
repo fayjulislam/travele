@@ -60,7 +60,7 @@ function App() {
             <PrivateRoute exact path="/addNewPackage">
               <AddNewPackage></AddNewPackage>
             </PrivateRoute>
-            <PrivateRoute exact path="/bookNow">
+            <PrivateRoute exact path="/bookNow/:id">
               <BookNow></BookNow>
             </PrivateRoute>
             <Route exact path="/login">

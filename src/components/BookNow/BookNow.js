@@ -1,25 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Form, Row, Button } from 'react-bootstrap';
-import { useHistory, useLocation } from 'react-router';
+import {useForm} from 'react-hook-form';
+import { useHistory, useLocation, useParams } from 'react-router';
 import Swal from 'sweetalert2';
 import useAuth from '../../Hooks/useAuth';
 
 const BookNow = () => {
     const history = useHistory();
-    const location = useLocation();
-    const redirect = location?.state?.from || "/";
-    const handlesubmit = (e) => {
-        e.preventDefault();
-        Swal.fire(
-            "Good job!",
-            "Booked In SuccessFull!",
-            "success"
-        )
-        setTimeout(() => {
-            history.push(redirect);
-        }, 3000)
-    }
     const { user } = useAuth();
+
+    const { register, handleSubmit } = useForm();
+
+    const {id} = useParams();
+    const [orders, setOrders] = useState([]);
+    useEffect(()=>{
+        fetch(`http://localhost:5000/allorder/${id}`)
+        .then(res => res.json())
+        .then(data => setOrders(data))
+    },[id])
+
+    const onSubmit = data =>{
+        data.status = 'pending';
+        data.email = user?.email;
+        data.order = orders;
+        fetch('http://localhost:5000/placeorder', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => {
+            if(res){
+                Swal.fire(
+                    "Wow",
+                    "Order Placed",
+                    "Success"
+                )
+            }
+            // history.push('/myorders');
+        })
+    }
+
+    
+    
     return (
         <div>
             <section>
@@ -29,29 +54,31 @@ const BookNow = () => {
                             <h2 className="mb-4 text-center">
                                 Please fill the form to place an order
                             </h2>
-                            <Form>
+                            <Form onSubmit={handleSubmit(onSubmit)} >
                                 <Row className="mb-3">
                                     <Form.Group as={Col} controlId="formGridName">
                                         <Form.Label>Name</Form.Label>
-                                        <Form.Control value={user?.displayName} type="text" placeholder="Enter Name" />
+                                        <Form.Control {...register("name")} value={user?.displayName} type="text" placeholder="Enter Name" />
                                     </Form.Group>
 
                                     <Form.Group as={Col} controlId="formGridEmail">
                                         <Form.Label>Email</Form.Label>
-                                        <Form.Control value={user?.email} type="email" placeholder="Enter Email" />
+                                        <Form.Control {...register("email")} value={user?.email} type="email" placeholder="Enter Email" />
                                     </Form.Group>
                                 </Row>
 
                                 <Form.Group className="mb-3" controlId="formGridAddress1">
                                     <Form.Label>Address</Form.Label>
-                                    <Form.Control placeholder="Habiganj Sylhet" />
+                                    <Form.Control {...register("address")}
+                                        type="address"
+                                        placeholder="Habiganj Sylhet" />
                                 </Form.Group>
 
 
                                 <Row className="mb-3">
                                     <Form.Group as={Col} controlId="formGridCity">
                                         <Form.Label>Phone</Form.Label>
-                                        <Form.Control
+                                        <Form.Control {...register("number")}
                                             type="number"
                                             placeholder="01777777777"
                                         />
@@ -59,7 +86,7 @@ const BookNow = () => {
 
                                 </Row>
 
-                                <Button onClick={handlesubmit} variant="danger">
+                                <Button type="submit" variant="danger">
                                     Place Order
                                 </Button>
                             </Form>

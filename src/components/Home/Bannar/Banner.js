@@ -11,7 +11,7 @@ const Banner = () => {
                     <div className="col-12 col-md-8 mx-auto">
                         <div className="banner-text text-center">
                             <h1 className="pb-3 fw-bolder">TRAVELLING AROUND THE WORLD</h1>
-                            <p className="pb-3">Taciti quasi, sagittis excepteur hymenaeos, id temporibus hic proident ullam, eaque donec delectus tempor consectetur nunc, purus congue? Rem volutpat sodales! Mollit. Minus exercitationem wisi.</p>
+                            <p className="pb-3">Looking for a unique vacation destination? Then maybe a trip to one of the 10 most unique tourist destinations might.</p>
                             <Link to="/bookNow">
                                 <Button className="fs-6 fw-bolder text-white" variant="danger">Continue Reading</Button>
                             </Link>
