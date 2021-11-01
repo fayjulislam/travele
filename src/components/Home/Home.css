@@ -1,17 +1,4 @@
 
-.medent-img {
-    border-radius: 10px;
-    height: 430px;
-    transition: transform 1.5s, filter 1.5s ease-in-out;
-    filter: grayscale(0);
-}
-.medent-img:hover {
-  filter: grayscale(100%);
-  transform: scale(1.1);
-}
-.we-medent-text {
-    padding-left: 20px;
-}
 .high-light {
     display: inline-block;
     width: 70px;

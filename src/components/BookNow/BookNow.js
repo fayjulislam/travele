@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Form, Row, Button } from 'react-bootstrap';
 import {useForm} from 'react-hook-form';
-import { useHistory, useLocation, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import Swal from 'sweetalert2';
 import useAuth from '../../Hooks/useAuth';
 
 const BookNow = () => {
-    const history = useHistory();
     const { user } = useAuth();
 
     const { register, handleSubmit } = useForm();

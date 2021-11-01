@@ -1,9 +1,7 @@
 import Button from '@restart/ui/esm/Button';
-import React, { useEffect, useHistory, useState } from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faMapMarkerAlt, faUser } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Card, Col, Row } from 'react-bootstrap';
+
 import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2';
 
